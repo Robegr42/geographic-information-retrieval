@@ -14,6 +14,7 @@
 }
 
 \renewcommand\contentsname{Contenidos}
+\renewcommand\refname{Referencias}
 \renewcommand\abstractname{Resumen}
 
 \newcommand\keywords[1]{
