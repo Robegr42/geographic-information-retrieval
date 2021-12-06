@@ -17,8 +17,10 @@
 \renewcommand\refname{Referencias}
 \renewcommand\abstractname{Resumen}
 
-\newcommand\keywords[1]{
-	{\small\vspace{3mm}\bf Palabras claves:} #1
+\newcommand\keywords[2]{
+	{\small\vspace{3mm}\bf Palabras claves:} #1\\
+	\indent
+	{\small\bf Keywords:} #2
 }
 
 % Renew article abstract command
