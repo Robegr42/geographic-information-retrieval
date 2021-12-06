@@ -8,25 +8,17 @@
 \usepackage{makeidx}  % allows for indexgeneration
 \usepackage{graphicx}
 \usepackage{url}
+
+\hyphenation{a-so-cia-das}
+\hyphenation{re-fe-ren-cias}
+\hyphenation{herra-mien-tas}
 \setcounter{tocdepth}{2}
 %
 \begin{document}
 \frontmatter
-\chapter*{Prefacio}
-
-Este trabajo se ha realizado como parte del seminario investigativo de la
-asignatura Sistemas de Recuperacion de Informacion en la Universidad de
-la Habana, Cuba, en el curso 2020-2021. En el mismo se ha realizado una
-investigación sobre el estado del arte y uso de los Sistemas de Recuperacion
-de Información Geográfica.
-
 \pagestyle{headings}  % switches on printing of running heads
 
 \addtocmark[2]{Recuperación de Información Geográfica}
-\tableofcontents
-
-\newpage
-
 \mainmatter              % start of the contributions
 %
 \title{Recuperación de Información Geográfica}
@@ -49,7 +41,7 @@ de Información Geográfica.
 \renewcommand\abstractname{Resúmen.}
 \renewcommand\keywordname{{\bf Palabras Claves:}}
 \begin{abstract}
-	Uno de los sub campos de la Recuperación de Información (RI) es la
+	Uno de los subcampos de la Recuperación de Información (RI) es la
 	Recueración de Información Geográfica (RIG). Los sistemas de RIG son de
 	gran utilidad en diferentes esferas de la sociedad, a nivel gubernamental,
 	empresarial, personal, etc. En este trabajo se realizará un análisis del
@@ -72,68 +64,72 @@ de Información Geográfica.
 \end{abstract}
 %
 
-\newpage
-
+\tableofcontents
+\clearpage
 \section{Características del Problema}\label{sec:prob-charact}
 
 Los Sistemas de Recuperación de Información (SRI) tienen una amplia gama de
-variantes, surgidos a partir de las distintas necesidades de la vida diaria y
-problemas presentados en el desarrollo de la humanidad. A medida que las
-necesidades de las personas van evolucionando así lo hacen los SRI. Es por ello
-que cada vez sea más necesario que estos sistemas sean más rápidos y eficaces.
+variantes, surgidas a partir de las distintas necesidades de la vida cotidiana
+y otras problemáticas que han aparecido a lo largo del desarrollo de la
+humanidad. A medida que las necesidades de las personas van evolucionando así
+lo hacen los SRI. Es por ello que cada vez es más necesario que estos sistemas
+sean más rápidos y eficaces.
 
-Uno de los subcampos de estos sistemas es la Recuperación de Información
-Geográfica (RIG). La RGI surge de la unión de de los SRI y los Sistemas de
-Información Geográficos (SIG), los cuales se enfocan en el desarrollo y uso de
-teorías, métodos, tecnología y datos para comprender los procesos geográficos,
+Uno de los subcampos de los SRI es la Recuperación de Información Geográfica
+(RIG). La RIG surge de la unión de de los SRI y los Sistemas de Información
+Geográficos (SIG), los cuales se enfocan en el desarrollo y uso de teorías,
+métodos, tecnologías y datos para comprender los procesos geográficos,
 relaciones y patrones \cite{chang2016}.
 
-Los sistemas de RGI son herramientas de búsqueda para buscar en la web,
-documentos empresariales y búsqueda local móvil que combinan consultas
-tradicionales basadas en texto con consultas de ubicación, como mapas o nombres
-de lugares. Son técnicas para construir un sistema de aplicación que pueda
-indexar, consultar, recuperar y navegar por la información georreferenciada. El
-objetivo de los sistemas de RGI es comprender mejor el conocimiento geográfico
-contenido en la web, documentos y consultas de los usuarios, y proporcionar una
-respuesta más satisfactoria a las necesidades de los usuarios.
+Los sistemas de RIG se emplean en la búsqueda local móvil, en la web y en
+documentos empresariales. Estos sistemas que combinan consultas tradicionales
+basadas en texto con consultas de ubicación, como mapas o nombres de lugares.
+Son técnicas para construir un sistema de aplicación que pueda indexar,
+consultar, recuperar y navegar por la información georreferenciada. El objetivo
+de los sistemas de RIG es comprender mejor el conocimiento geográfico contenido
+en la web, documentos y consultas de los usuarios, y proporcionar una respuesta
+más satisfactoria a sus necesidades.
 
-Una de las características propias de los sitemas de RGI es que en muchas
+Una de las características propias de los sistemas de RIG es que en muchas
 ocasiones la información obtenida puede ser visualizada de diferentes formas
 (comúnmente en mapas). Esto permite a los usuarios tener una mejor
 percepción de la información y una mejor comprensión de la misma.
 
-Muchos son los otros campos científicos que están relacionados con la RIG:
-el procesamiento de lenguaje natural para la comprención de textos no
-estructurados y en las búsquedas que realizan los usuarios; la linguísitca en
+Varios son los otros campos científicos que están presentes en los sistemas de
+RIG: el procesamiento de lenguaje natural para la comprensión de textos no
+estructurados y en las búsquedas que realizan los usuarios; la lingüística en
 el análisis de documentos, búsquedas o datos de forma general que se encuentran
 en otros idiomas; entre muchos otros.
 
-El presente trabajo está estructurado de la siguiente forma: en la sección
-\ref{sec:arch} se mostrará la arquitectura de un sistema de RIG básico así
-como alguna de las implementaciones que existen; en la sección \ref{sec:eval} se
-analizará la evaluación de estos sistemas; en la sección \ref{sec:appl} se
-describirán las diversas aplicaciones de los sistemas de RIG; en la sección
+En este trabajo se muestran los resultados de una investigación sobre el estado
+del arte y uso de los Sistemas de Recuperación de Información Geográfica. El
+mismo está estructurado de la siguiente forma: en la Sección \ref{sec:arch} se
+mostrará la arquitectura de un sistema de RIG básico así como alguna de las
+implementaciones que existen; en la Sección \ref{sec:eval} se analizará la
+evaluación de estos sistemas; en la Sección \ref{sec:appl} se describirán las
+diversas aplicaciones de los sistemas de RIG; en la sección
 \ref{sec:pros-and-cons} se mostrarán los principales beneficios y limitantes
-que existen al usar un sistema de RIG; y en la sección \ref{sec:chall} se
+que existen al usar un sistema de RIG; y en la Sección \ref{sec:chall} se
 describirán los retos que se presentan en el desarrollo de los sistemas de RIG
 en la actualidad.
 
 \section{Arquitecturas Propuestas}\label{sec:arch}
 
-Muchos son los sistemas de recuperación de información geográfica que han sido
-propuestos. En las siguientes secciones se analizará tanto la arquitectura
-básica de estos sistemas así como algunas de las propuestas más avanzadas.
+Muchos son los sistemas de recuperación de información geográfica que se han
+propuesto a lo largo del tiempo. En las siguientes secciones se analizará
+tanto la arquitectura básica de estos sistemas así como algunas de las
+propuestas más avanzadas.
 
 \subsection{Arquitectura Básica}\label{sec:archbas}
 
 Como se puede apreciar en la Figura \ref{fig:archbas}, la arquitectura básica
 de un sistema de RIG consta de 3 estapas principales: adquisición de de datos,
-indexado y finalmente la búsqueda o recuperación de información. En la primera
+indexado y finalmente, la búsqueda o recuperación de información. En la primera
 etapa se utilizan \emph{crawlers} enfocados directamente a extraer información
 geográfica de la web. Muchas de las fuentes no tienen los datos de forma
 estructurada, es por ello que en la segunda etapa mucha de la información es
-analizada y parseada. En esta estapa es donde la información de guarda en la
-base de datos e indexada. En la tercera etapa, al realizar la búsqueda de la
+analizada y parseada. En esta estapa es donde la información se guarda en la
+base de datos y es indexada. En la tercera etapa al realizar la búsqueda de la
 información, la misma pasa por un proceso de \emph{ranking} o evaluación. Esto
 permite que se pueda encontrar la información más relevante de una forma más
 eficiente.
@@ -151,8 +147,8 @@ eficiente.
 En esta propuesta el trabajo de \cite{purves2007} describe el diseño,
 implementación y evaluación de un motor de búsqueda de información geográfica
 el cual es capaz de realizar búsquedas en forma de tripletas: tema - relación
-espacial - locación. Como se puede ver en la Figura \ref{fig:archspirit}, los
-documentos además de ser indexados y almacenados en una base de datos, tambén
+espacial - locación. Como se puede ver en la Figura \ref{fig:archspirit}, a los
+documentos, además de ser indexados y almacenados en una base de datos, también
 se les agrega un \emph{footprint} lo cual permite que se pueda identificar y
 relacionar de forma más precisa la información.
 
@@ -181,7 +177,7 @@ Universidad de Ja'en en el evento GeoCLEF 2007. La arquitectura de este sistema
 se basa en cinco módulos (o subsistemas) principales como se puede apreciar en
 la Figura \ref{fig:archgeouja}. Los módulos son: subsistema de recuperación de
 información, subsistema de traducción, subsistema de búsqueda de relaciones
-geográficas, subsistema de reonocimiento de nombres de entidades y subsistema
+geográficas, subsistema de reconocimiento de nombres de entidades y subsistema
 de validación.
 
 \begin{figure}[htb]%
@@ -193,7 +189,7 @@ de validación.
 \end{figure}
 
 Primeramente el usuario ingresa una búsqueda (en cuatro posibles idiomas) la
-cual, en caso de ser necesario se traduce al inglés utilizando el susbsistema
+cual, en caso de ser necesario, se traduce al inglés utilizando el susbsistema
 de traducción, y se envía al subsistema de recuperación de información para
 extraer los documentos relevantes. Esta búsqueda es también procesada por los
 subsistemas de búsqueda de relaciones geográficas y reconocimiento de nombres de
@@ -219,38 +215,35 @@ En el segundo módulo se realiza la búsqueda de la información.
 	\label{fig:archgeofinder}
 \end{figure}
 
-Al realizar una búsqueda, la misma se utiliza para buscar documentos
+Al realizar una búsqueda, la misma se utiliza para consultar documentos
 relacionados por el contenido y documentos relacionados espacialmente. Luego,
-los documentos se evalúan teneiendo encuenta estas dos formas antes mencionadas
-(contenido y espacio). Finalmente teniendo en cuenta ambas métricas los
+los documentos se evalúan teniendo en cuenta estas dos formas antes mencionadas
+(contenido y espacio). Finalmente considerando ambas métricas los
 resultados se combinan para extraer la mejor selección de documentos.
 
 \section{Evaluación del Sistema}\label{sec:eval}
 
-La naturaleza determinista de los SRI propicia su necesidad intrínseca de
-evaluación. Por ello y paralelamente al desarrollo de su tecnología, surge un
+Los sistemas RIG, como cualquier otro sistema, se pueden someter a evaluación.
+De esta forma los usuarios pueden valorar su efectividad y adquierir más confianza
+en los mismos. Por ello, y paralelamente al desarrollo de su tecnología, surge un
 amplio campo de trabajo dedicado específicamente a la determinación de medidas
 que permitan valorar su efectividad. Un repaso exhaustivo de la bibliografía
-especializada permite identificar varios grupos de evaluaciones: las basadas
-en la relevancia de los documentos, las basadas en los usuarios y un tercer
-grupo de medidas alternativas a la realización de los juicios de relevancia,
-que pretenden evitar afectarse de las dosis de subjetividad que estos juicios
+especializada permite identificar varios grupos de evaluaciones: las basadas en
+la relevancia de los documentos, las basadas en los usuarios y un tercer grupo
+de medidas alternativas a la realización de los juicios de relevancia, que
+pretende evitar la afectación de estos juicios por las dosis de subjetividad que
 poseen de forma inherente.
 
-Los sistemas RGI, como cualquier otro sistema, son susceptibles de ser
-sometidos a evaluación, con el fin de que sus usuarios se encuentren en
-condiciones de valorar su efectividad y, de este modo, adquieran confianza
-en los mismos
+El proceso de evaluación de los sistemas de RIG es bastante parecido a los
+empleados en los SRI estándar, variando solo algunos pasos específicos que el
+propio sistema impone dada las caracteristicas del mismo y del problema que
+pretende resolver (como por ejemplo la detección de entidades geográficas)
+\cite{Kornai2005}.
 
-El proceso de los sistemas RGI en principio son bastante parecidos a los 
-sistemas SRI estándar, variando solo algunos pasos específicos que el propio
-sistema impone dada las caracteristicas del mismo y del problema que pretende
-resolver, como la detección de entidades geográficas. \cite{Kornai2005}
-
-En este punto surge una nueva cuestión, si bien podría parecer trivial a
-primera vista, puede marcar en gran medida el resultado de un proceso de
-evaluación. Esta cuestión no es otra que responder con certeza a la pregunta
-``?`cuándo la información es relevante?".
+En este punto surge una nueva cuestión: ?`Cuándo la información es
+relevante?, si bien podría parecer trivial a primera vista, puede marcar en
+gran medida el resultado de un proceso de evaluación. Esta cuestión no es otra
+que responder con certeza a la pregunta .
 
 El término relevancia significa ``calidad o condición de relevante,
 importancia, significación", y el término relevante lo define como
@@ -292,7 +285,7 @@ Estas categorías son las siguientes:
 
 \subsection{GeoCLEF}\label{sec:GeoCLEF}
 
-GeoCLEF (\emph{Geographical CCLEF}) es un marco de evaluación para la RGI que
+GeoCLEF (\emph{Geographical CCLEF}) es un marco de evaluación para la RIG que
 pertenece al foro internacional \emph{Cross Language Evaluation Forum} (CLEF).
 Fue una colaboración esfuerzo de los grupos de investigación de la Universidad
 de California, Berkeley y la Universidad de Sheffield.
@@ -309,35 +302,35 @@ prueba piloto para evaluar la recuperación de documentos multiling\"ues con
 \section{Aplicaciones}\label{sec:appl}
 
 Las aplicaciones de estos sistemas cada vez son más frecuentes, en ámbitos
-tanto cotideanos como científicos. Hoy en día, muchos de los problemas
+tanto cotidianos como científicos. Hoy en día, muchos de los problemas
 resueltos están orientados espacialmente, lo que significa que cada vez más
-personas necesitan utilizar información espacial, rápido acceso a estos medios,
-softwares y aplicaiones fáciles de usar (\emph{user friendly} en inglés), que no
-requieran de conociemientos específicos ni formación especial.
-
-A continuación algunas de estas aplicaciones.
+personas necesitan utilizar información espacial, acceso rápido a estos medios,
+softwares y aplicaciones fáciles de usar (\emph{user friendly} en inglés), que no
+requieran de conocimientos específicos ni formación especial. A continuación
+se presentan algunas aplicaciones de estos sistemas.
 
 \subsection{Búsqueda Local Móvil}\label{sec:mobile}
 
-Quizás una de las aplicaciones más importantes que se le puede atribuir a la
-RIG. En la actualidad, el uso de dispositivos móviles casi se ha vuelto una
-necesidad en la vida de todo ser humano, y las búsquedas en INTERNET son las
-acciones más frecuentes en la web. Preguntas como: \emph{?` Cúal es el
-restaurante más cercano?, ?` Estoy cerca del teatro X ?} o quizás consultas
-como: \emph{Gasolineras cerca, Barberías a menos de 1Km}. Todas estás
-cuestiones deben ser resueltas usando RIG, brindando una respuesta acertada y
-ahorrando tiempo al usuario \cite{teevan2011,lymberopoulos2011}. 
+La búsqueda local móvil es quizás una de las aplicaciones más importantes que
+se le puede atribuir a la RIG. En la actualidad, el uso de dispositivos móviles
+casi se ha vuelto una necesidad en la vida de todo ser humano, y las búsquedas
+en INTERNET son las acciones más frecuentes en la web. Preguntas como: \emph{?`
+Cúal es el restaurante más cercano?, ?` Estoy cerca del teatro X ?} o quizás
+consultas como: \emph{Gasolineras cerca, Barberías a menos de 1Km}. Todas estás
+cuestiones deben ser resueltas usando sistemas de RIG, ello brinda una
+respuesta acertada y ahorra tiempo al usuario
+\cite{teevan2011,lymberopoulos2011}. 
 
 \subsection{Neogeografía}\label{sec:neogeo}
 
-Aunque los usos de la Neogeografía no suelen se formales ni analíticos, está
-basada en el uso de técnicas y herramientas geográficas para actividades
-personales o de interes especifico de un grupo de personas no expertas en el
-tema.\cite{turner2006}
+Aunque los usos de la Neogeografía no suelen ser formales ni analíticos, la
+misma está basada en el uso de técnicas y herramientas geográficas para
+actividades personales o de interés específico de un grupo de personas no
+expertas en el tema.\cite{turner2006}
 
 El monitoreo del medioambiente con el uso de información geográfica es una de
 las ramas de trabajo que actualmente se encuentra en investigación
-\cite{connors2012}. 
+\cite{connors2012}.
 
 Se trata principalmente del análisis de datos brindados de forma voluntaria
 usada por personas para crear sus mapas, los cuales responden a necesidades
@@ -347,40 +340,40 @@ social. \cite{harris2012}
 \subsection{Geoweb}\label{sec:geoweb}
 
 Geoweb o Web geográfica(\emph{Geographic Web} según su nombre en inglés)
-describe como la información a la cual se accede en línea es cada vez más
-relevante para el lugar donde uno se encuentra. Se puede encontrar usos
+describe cómo la información a la cual se accede en línea es cada vez más
+relevante para el lugar donde uno está ubicado. Se pueden encontrar usos
 variados en este tema, desde la Economía Política con evidencias en las
-práticas estatales\cite{leszczynski2012}; hasta sitios para el análisis
-de relaciones cívicas ciudadanas\cite{johnson2015}.
+prácticas estatales \cite{leszczynski2012}; hasta sitios para el análisis
+de relaciones cívicas ciudadanas \cite{johnson2015}.
 
 Geoweb es la fusión de información geográfica (basada en la ubicación) con la
-información general que está disponible en Internet. Los Geonavegadores son
-una expresión de este concepto, siendo \emph{Google Maps} uno de los productos
-estrella en la actualidad donde mediante el procesamiento de datos y la
-indexación con contenido geográfico es uno de los servicios más preciados y
-usados dentro de la Geoweb
+información general que está disponible en Internet. Los \emph{Geonavegadores}
+son una expresión de este concepto. \emph{Google Maps} uno de los productos
+estrella en la actualidad. Mediante el procesamiento de datos y la indexación
+con contenido geográfico esta aplicación constituye uno de los servicios más
+destacados y usados dentro de la Geoweb.
 
-El interés en una Geoweb ha avanzado por las nuevas tecnologías,
-conceptos y productos, específicamente la popularización del posicionamiento
-con GPS, siendo este uno de los aportes más preciados. GPS, otra maravilla de
-la ciencia, se posiciona como un producto ampliamente usado, dejando claro la
-importancia de los servicios geoweb.
+El interés en una Geoweb ha avanzado por las nuevas tecnologías, conceptos y
+productos, específicamente la popularización del posicionamiento con GPS,
+siendo este uno de los aportes más significativos. El GPS se posiciona como un
+producto ampliamente usado, dejando claro la importancia de los servicios
+geoweb.
 
 \section{Beneficios y Limitantes}\label{sec:pros-and-cons}
 
 La extracción de datos geográficos de manera general puede ser de gran utilidad
 en diferentes campos de investigación e incluso en la vida cotidiana
 \cite{artz2009}. Muchos son los beneficios y limitantes que existen al procesar
-información espacial. En las siguientes secciones se realizará una descripción
+información espacial. A continuación se realizará una descripción
 de los puntos fuertes y débiles más relevantes en los sistemas de RIG.
 
 \subsection{Análisis de Patrones Geográficos}\label{sec:patr}
 
 El análisis de patrones geográficos puede ser fundamental para la administración
 de una empresa, localidad, país, etc. Se pueden analizar todo tipo de patrones
-como: taza de crimen por zonas, tráfico de vehículos por zonas, los diferentes
+como: tasa de crimen por zonas, tráfico de vehículos por zonas, los diferentes
 lenguajes que se hablen en una zona, censos, etc. De esta manera se puede, por ejemplo,
-distribuir de una manera mejor diferentes recursos como: el nivel de seguridad
+distribuir de una forma más eficiente diferentes recursos como: el nivel de seguridad
 policial en algún barrio, dónde es mejor situar una tienda o carteles promocionales,
 qué zonas priorizar en la protección de desamparados, etc.
 
@@ -393,7 +386,7 @@ ha experimentado en el tiempo.
 Uno de los principales beneficios de la extracción correcta de datos
 geográficos es para analizar los cambios ambientales \cite{scholten1991} en el
 planeta, o algún area en específico (muy relacionado con el tema tratado en la
-sección \ref{sec:patr}). Con estos datos se puede determinar el impacto de la
+Sección \ref{sec:patr}). Con estos datos se puede determinar el impacto de la
 actividad humana en el ambiente, como por ejemplo la contaminación de la
 atmósfera, la contaminación de los recursos hídricos, la contaminación de los
 suelos, etc. Una recuperación efectiva de datos relacionados con la salud
@@ -409,29 +402,29 @@ zonas; empresas distribuidoras de paquetes que quiere seleccionar las mejores
 rutas; empresas que se dediquen a la extracción de recuros naturales) así como
 a niveles más personales (ej. buscar restaurantes cercanos, planificar viajes, etc).
 
-Estas desiciones, sin importar su naturaleza, son muchas veces de gran impacto
+Estas decisiones, sin importar su naturaleza, son muchas veces de gran impacto
 para la persona o institución que las toma. En la mayoría de los casos,
 las mismas pueden ahorrar tiempo y dinero.
 
 \subsection{Principales Limitantes}\label{sec:limit}
 
-Muchas son las limitantes de los sitemas de recuperación de información
+Muchas son las limitantes de los sistemas de recuperación de información
 geográfica hoy en día \cite{purves2011,purves2004}. Entre los muchos
-inconvenientes en este campo se pueden mencionar: ambiguedades toponómicas,
+inconvenientes en este campo se pueden mencionar: ambiguedades toponímicas,
 falta de estandarización para describir los datos, falta de una métrica de
 clasificación efectiva para organizar los resultados recuperados de una
-consulta, etc. En las próximas secciones se describirián estas limitantes de
+consulta, etc. A continuación se describirán estas limitantes de
 manera detallada.
 
-\subsubsection{Ambiguedades Toponómicas}\label{sec:ambig}
+\subsubsection{Ambiguedades Toponímicas}\label{sec:ambig}
 
 Uno de los principales problemas en la recuperación de información, y en
 específico a la información geográfica, es la amiguedad (en el caso abordado en
 este artículo: la toponimia \cite{buscaldi2009}). Es muy común, a nivel global,
 que algunos lugares no tengan un nombre propio, sino que sean nombrados por
 alguna circunstancia, objeto o incluso el nombre de una persona. Entre los
-diferentes tipos de ambiguedades se encuentran: lugares nombres de objetos (ej.
-Granada, La Palma, Palo Seco, La Paz, Las Tunas, Perico); nombres de personas
+diferentes tipos de ambiguedades se encuentran: lugares con nombres de objetos (ej.
+Granada, La Palma, Palo Seco, Las Tunas, Perico); nombres de personas
 (ej. San Martín, Santiago, St. Louis, Santa Marta, Artemisa), lugares nombrados
 por alguna circunstancia (ej. Matanzas, Limonar, Nevada, La Mancha\footnote{La
 teoría más extendida estipula que es un nombre heredado de una palabra árabe la
@@ -446,12 +439,12 @@ ciudad) en Estados Unidos).
 Otro de los problemas claves en la recuperación de información geográfica es la
 falta de estandarización de los datos \cite{deAndrade2014}. Como es sabido
 existen diversas formas de guardar información sobre un lugar. Una forma simple
-y efectiva es guardar las coordenadas geográficas (latitud y longitud), sin
+es guardar las coordenadas geográficas (latitud y longitud), sin
 embargo, no siempre es efectivo este método. Las coordenadas solo denotan un
 lugar exacto, por tanto grandes áreas no pueden ser representadas con una
 coordenada. Otra forma puede ser guardar el nombre del lugar, no obstante,
 además de las ambiguedades que esto genera, surgen otros problemas. Muchos
-lugares no son siempre son referidos exactamente por su nombre, por ejemplo: la
+lugares no son siempre referidos exactamente por su nombre, por ejemplo: la
 Gran Manzana (Manhattan), la Ciudad del Pecado (Las Vegas), la Ciudad del Sol
 (Miami), la Llave del Golfo (Cuba), etc. Incluso, existen lugares que, por las
 diversidad de lenguajes que existen en la zona, tienen dos nombre diferentes.
@@ -477,7 +470,7 @@ móviles basados en la ubicación del usuario) \cite{kumar2011}.
 Al clasificar datos geográficos, muchos son los factores que dificultan la
 clasificación como: el lugar donde se realiza la búsqueda (ej. cuando se quiere
 encontrar alguna cafetería cercana), la fuente de donde se extraen los datos,
-los factores vistos en las secciones \ref{sec:ambig} y \ref{sec:estand}, etc.
+los factores vistos anteriormente, etc.
 
 A pesar de estas limitantes varios estudios se han realizado sobre la evaluación
 de la efectividad de los diversos algoritmos de clasificación de datos geográficos
@@ -486,18 +479,18 @@ de la efectividad de los diversos algoritmos de clasificación de datos geográf
 \section{Desafíos Futuros}\label{sec:chall}
 
 Muchos son los desafíos que exiten en vías de mejorar la recuperación de datos
-geográficos. Entre los más mencionados \cite{purves2014}, se encuentran:
+geográficos. Entre los más mencionados \cite{purves2014} se encuentran:
 detectar referencias geográficas en forma de nombres y lugares, así como
 referencias espaciales asociadas a calificadores de lenguaje natural en
 documentos de textos o en búsquedas hechas por los usuarios; desambiguar nombre
 de lugares; interpretar de forma geométrica nombres de lugares poco
 descriptivos como ``Midlands'' y de referencias espaciales poco descriptivas
-como ``cerca'', ``lejos'', etc.; indexar documentos respecto a el contenido
+como ``cerca'', ``lejos'', etc.; indexar documentos respecto al contenido
 geográfico; desarrollar interfaces gráficas que faciliten el acceso a datos
 geográficos; desarrollar métodos de evaluación para los diferentes sistemas de
 RIG; entre otros.
 
-En publicaciones más recientes \cite{purves2018}, se exponen como desafíos:
+En publicaciones más recientes \cite{purves2018} se exponen como desafíos:
 entender la importancia que tiene la información geográfica en diferentes campos
 investigativos como las ciencias de la computación, geometría computacional,
 linguística, etc.; la aplicación del \emph{machine learning} y \emph{deep
@@ -510,12 +503,12 @@ está indexando; definir de una mejor forma la relevancia de datos extraídos;
 entre otros.
 
 En el mismo documento se hace referencia también a desafíos planteados con
-anterioridad pero que todavía no han sido completamente desarrollados como: el
-trabajo con datos vernáculos o históricos; vías más inteligentes para el
-procesamiento del lenguaje espacial así como expresiones espaciales como:
-``40km al norte de ...''; entre otros.
+anterioridad pero que todavía no han sido completamente desarrollados como el
+trabajo con datos vernáculos o históricos y la búsqueda de vías más
+inteligentes para el procesamiento del lenguaje espacial así como expresiones
+espaciales: ``40km al norte de ...''.
 
-En las siguientes secciones se abordarán de forma más detallada algunos de los
+A continuación se abordarán de forma más detallada algunos de los
 desafíos enunciados posteriormente.
 
 \subsection{Detección de Referencias Espaciales en Textos}\label{sec:detect}
@@ -523,15 +516,15 @@ desafíos enunciados posteriormente.
 La extracción de locaciones geográficas en textos es uno de los desafíos más
 importantes en la recuperación de datos geográficos. Específicamente, se plantea
 no solo la extracción mediante la resolución de nombres directamente, sino
-el reconocimiento de referencias espaciales. A modo de resumen: saber cuando una
+el reconocimiento de referencias espaciales. A modo de resumen: saber cuándo una
 información hace referencia a un lugar geográfico (aún cuando no se mencione
-directamente). Esto es conocido como reconocmiento toponómico.
+directamente). Esto es conocido como reconocmiento toponímico.
 
 \subsection{Interpretación Geométrica de nombres y Referencias poco
 Descriptivas}\label{sec:geom}
 
-En muchas ocaciones los nombres de lugares al ser poco conocidos, pueden no
-encontrarse entre los nombres conocidos geográficamente hablando. Si a esto
+En muchas ocasiones los nombres de lugares al ser poco conocidos, pueden no
+encontrarse entre los nombres reconocidos geográficamente hablando. Si a esto
 se le suma el hecho de que estos nombres pueden ser poco descriptivos, entonces
 la tarea de relacionarlos con una locación puede ser bien complicada. Además,
 en muchos casos, los lugares son referenciados mediante otros lugares (ej. 
@@ -556,60 +549,60 @@ Campos}\label{sec:import}
 Este punto puede no parecer un desafío, sin embargo, muchos no conocen o relacionan
 la importancia que tiene el estudio de datos geográficos (así como su extracción)
 en diferentes campos investigativos como: las ciencias de la computación, la 
-geometría computacional, la linguística, siencias de la información, etc.
+geometría computacional, la linguística, ciencias de la información, etc.
 
-La recuperación de información geográfica va más allá del
-reconocimiento de nombres de lugares, sino también del reconocimiento de referencias así
-como el análisis e interpretación de las mismas en textos de una maneras más
-sofisticadas. Es por ello que es considerado ineherentemente un trabajo
+La recuperación de información geográfica va más allá del reconocimiento de
+nombres de lugares, y también abarca reconocimiento de referencias así como el
+análisis e interpretación de las mismas en textos de una manera más
+sofisticada. Es por ello que es considerado inherentemente un trabajo
 interdisciplinario.
 
-\subsection{Aplicación del \emph{Machine learning} y \emph{Deep learning} en el
+\subsection{Aplicación del \emph{Machine Learning} y \emph{Deep Learning} en el
 Procesamiento de Lenguaje Natural}\label{sec:ml}
 
-Diferentes sub-campos de la Inteligencia Artifical como el \emph{machine
+Diferentes subcampos de la Inteligencia Artifical como el \emph{machine
 learning} y \emph{deep learning} son unos de los más usados en la actualidad
 para el procesamiendo de datos de forma general. Se plantea como desafío la
 integración de estas herramientas en el procesamiento de lenguaje natural para
 la recuperación de datos geográficos.
 
 En muchos casos estas herramientas son entrenadas con un conjunto de datos que
-contienen informacion adicional en forma de metadatos, lo cual no es un escenario
+contienen información adicional en forma de metadatos, lo cual no es un escenario
 muy realista, donde normalmente la mayoría de la información está no estructurada.
-Esto aumenta considerablemnte la complejidad del problema y lo hace un desafío más
-en los sistemas de recuperación RIG.
+Esto aumenta considerablemente la complejidad del problema y lo hace un desafío más
+en los sistemas de RIG.
 
-\subsection{Evaluación y Publicación de Métodos, Algortimos, Datos y
+\subsection{Evaluación y Publicación de Métodos, Algoritmos, Datos y
 Resultados Reproducibles}\label{sec:publ}
 
 A pesar de los avances realizados en este campo, uno de los desafíos más
 importantes es la publicación de los mismos de manera reproducible, así como
 los métodos, algoritmos y conjunto de datos usados. En muchos casos, los
 resultados obtenidos no se encuentran bien documentados, o no hacen referencias
-y comparaciones con otros método. Esto está ligado directamente con el hecho de
-que la evaluación de los sistemas RIG todavía
-es un punto débil en este campo.
+y comparaciones con otros métodos. Esto está ligado directamente con el hecho
+de que la evaluación de los sistemas de RIG todavía es un punto débil en este
+campo.
 
 \section{Conclusiones}\label{sec:conclusions}
 
-Como se pudo apreciar en el trabajo presentado, la recuperación de información
-geográfica es uno de los subcampos más complejos de la recuperación de datos
-en general. Muchos han sido los avances realizados en esta área, pero también
-hay muchos problemas y desafíos que quedan por resolver de manera más eficiente
-y/o eficaz.
-
-En el trabajo presentado de mostraron las características principales de los
+En el trabajo presentado se mostraron las características principales de los
 sistemas de RIG. La arquitectura básica de estos sistemas así como algunas
 variaciones implementadas fueron explicadas también. Se realizó un análisis de
 los diferentes métodos de evaluación de los sistemas de RIG así como la
 aplicación de los mismos en diferentes tipos de problemas. Se debatieron los
-principales beneficios y limitantes que existen en el uso de estos sistemas.
+principales beneficios y limitantes que existen en el uso de ellos.
 Además, se mostró un resumen de los principales desafíos que están presentes
 actualmente en el campo de la recuperación de información geográfica.
 
+Como se puede apreciar, la recuperación de información geográfica es uno de los
+subcampos más complejos de la recuperación de datos en general. Muchos han sido
+los avances realizados en esta área, pero también hay muchos problemas y
+desafíos que quedan por resolver de manera más eficiente y/o eficaz.
+
+
 \section{Recomendaciones}\label{sec:recomend}
 
-Se exhorta a los profesoras, estudiantes y otros investigadores a profundizar
+Se exhorta a los profesores, estudiantes y otros investigadores a profundizar
 en el tema de la recuperación de información geográfica. Es todavía un
 campo que se está explorando y que necesita de la participación de todos
 para su mejoramiento.
